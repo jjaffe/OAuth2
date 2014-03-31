@@ -1,15 +1,8 @@
 ﻿@model OAuth2.Models.UserInfo
 
 <p>
-    @if (@Model.PhotoUri.IsEmpty())
-    {
-        @:"No photo"
-    }
-    else
-    {
-        <img src="@Model.PhotoUri" alt="photo"/>
-    }
+    @Model.FirstName @Model.LastName (@(Model.Email ?? "email is hidden")) [@Model.ProviderName @Model.Id]
 </p>
 <p>
-    @Model.FirstName @Model.LastName (@(Model.Email ?? "email is hidden")) [@Model.ProviderName @Model.Id]
+    Verfied Email: @Model.VerifiedEmail
 </p>

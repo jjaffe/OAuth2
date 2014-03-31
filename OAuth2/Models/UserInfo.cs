@@ -43,6 +43,12 @@ namespace OAuth2.Models
         /// </summary>
         public string Id { get; set; }
 
+
+        /// <summary>
+        /// whether email address has been verified
+        /// </summary>
+        public bool VerifiedEmail { get; set; }
+
         /// <summary>
         /// Friendly name of <see cref="UserInfo"/> provider (which is, in its turn, the client of OAuth/OAuth2 provider).
         /// </summary>

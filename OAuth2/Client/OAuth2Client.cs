@@ -211,6 +211,7 @@ namespace OAuth2.Client
             var client = _factory.CreateClient(UserInfoServiceEndpoint);
             client.Authenticator = new OAuth2UriQueryParameterAuthenticator(AccessToken);
             var request = _factory.CreateRequest(UserInfoServiceEndpoint);
+            request.AddParameter("access_token", AccessToken);
 
             BeforeGetUserInfo(new BeforeAfterRequestArgs
             {
