@@ -87,7 +87,7 @@ namespace OAuth2.Client.Impl
         /// </summary>
         protected override Endpoint AccessCodeServiceEndpoint
         {
-            get { return new Endpoint { BaseUri = "http://bncauth-dev.herokuapp.com", Resource = "/oauth/authorize" }; }
+            get { return new Endpoint { BaseUri = "https://bncauth-dev.herokuapp.com", Resource = "/oauth/authorize" }; }
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace OAuth2.Client.Impl
         /// </summary>
         protected override Endpoint AccessTokenServiceEndpoint
         {
-            get { return new Endpoint { BaseUri = "http://bncauth-dev.herokuapp.com", Resource = "/oauth/token" }; }
+            get { return new Endpoint { BaseUri = "https://bncauth-dev.herokuapp.com", Resource = "/oauth/token" }; }
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace OAuth2.Client.Impl
         /// </summary>
         protected override Endpoint UserInfoServiceEndpoint
         {
-            get { return new Endpoint { BaseUri = "http://bncauth-dev.herokuapp.com", Resource = "/api/me" }; }
+            get { return new Endpoint { BaseUri = "https://bncauth-dev.herokuapp.com", Resource = "/api/me" }; }
         }
     }
 }
