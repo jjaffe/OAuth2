@@ -42,6 +42,10 @@ namespace OAuth2.Models
         /// Unique identifier.
         /// </summary>
         public string Id { get; set; }
+        /// <summary>
+        /// User Name
+        /// </summary>
+        public string userName { get; set; }
 
 
         /// <summary>
@@ -75,7 +79,8 @@ namespace OAuth2.Models
         /// <summary>
         /// Photo URI.
         /// </summary>
-        public string PhotoUri {
+        public string PhotoUri
+        {
             get { return AvatarUri.Normal; }
         }
 
@@ -83,6 +88,12 @@ namespace OAuth2.Models
         /// Contains URIs of different sizes of avatar.
         /// </summary>
         public AvatarInfo AvatarUri { get; private set; }
+
+        /// <summary>
+        /// Roles
+        /// </summary>
+        public string[] Roles { get; set; }
+
     }
 }
 

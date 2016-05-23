@@ -9,14 +9,13 @@ using RestSharp;
 namespace OAuth2.Client.Impl
 {
     /// <summary>
-    /// BNC authentication client.
+    /// CMDM authentication client.
     /// </summary>
-    public class BNCClient : OAuth2Client
+    class CMDMClient : OAuth2Client
     {
+         private const string AUTH_SERVER = "http://bncauth-dev.herokuapp.com";// "https://secure.berkerynoyes.com";
 
-        private const string AUTH_SERVER = "https://secure.berkerynoyes.com";//"http://bncauth-dev.herokuapp.com";
-
-        public BNCClient(IRequestFactory factory, IClientConfiguration configuration)
+         public CMDMClient(IRequestFactory factory, IClientConfiguration configuration)
             : base(factory, configuration)
         {
         }
@@ -59,17 +58,14 @@ namespace OAuth2.Client.Impl
             //var names = cnt["name"].Value<string>().Split(' ').ToList();
             //const string avatarUriTemplate = "{0}&s={1}";
             //var avatarUri = cnt["avatar_url"].Value<string>();
-            JArray roles = cnt["roles"].SafeGet(x => x.Value<JArray>());
             var result = new UserInfo
                 {
                     Email = cnt["email"].SafeGet(x => x.Value<string>()),
                     VerifiedEmail = cnt["verifiedEmailAddress"].SafeGet(x => x.Value<bool>()),
                     //ProviderName = this.Name,
-                    Id = cnt["userId"].SafeGet(x => x.Value<string>()),
+                    //Id = cnt["id"].Value<string>(),
                     FirstName = cnt["firstName"].SafeGet(x => x.Value<string>()),
-                    LastName = cnt["lastName"].SafeGet(x => x.Value<string>()),
-                    userName = cnt["username"].SafeGet(x => x.Value<string>()),
-                    Roles = roles.Select(r => r.ToString()).ToArray()
+                    LastName = cnt["lastName"].SafeGet(x => x.Value<string>())
                     //AvatarUri =
                     //    {
                     //        Small = !string.IsNullOrWhiteSpace(avatarUri) ? string.Format(avatarUriTemplate, avatarUri, AvatarInfo.SmallSize) : string.Empty,
@@ -85,7 +81,7 @@ namespace OAuth2.Client.Impl
         /// </summary>
         public override string Name
         {
-            get { return "Berkery Noyes Accounts"; }
+            get { return "CMDM"; }
         }
 
         /// <summary>

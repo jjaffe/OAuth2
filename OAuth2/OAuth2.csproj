@@ -34,12 +34,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\BerkeryNoyes\CRM\CMDMmvc\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="RestSharp, Version=103.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RestSharp.103.4\lib\net4\RestSharp.dll</HintPath>
+      <HintPath>..\..\BerkeryNoyes\CRM\CMDMmvc\packages\RestSharp.103.4\lib\net4\RestSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -52,6 +53,7 @@
     <Compile Include="AuthorizationRoot.cs" />
     <Compile Include="Client\BeforeAfterRequestArgs.cs" />
     <Compile Include="Client\Impl\BNCClient.cs" />
+    <Compile Include="Client\Impl\CMDMClient.cs" />
     <Compile Include="Client\Impl\FacebookClient.cs" />
     <Compile Include="Client\Impl\FoursquareClient.cs" />
     <Compile Include="Client\Impl\GitHubClient.cs" />
